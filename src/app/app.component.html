@@ -44,7 +44,7 @@
 		<div class="form-label">
 			<label for="address">Индекс получателя</label>
 		</div>
-		<textarea rows="3" cols="70" placeholder="ВВЕДИТЕ ИНДЕКС                                                   АДРЕС ЕСЛИ ИНДЕКС НЕ ИЗВЕСТЕН" id="address" formControlName="address" ></textarea>
+		<textarea rows="3" cols="70" placeholder="ВВЕДИТЕ ИНДЕКС                                                        АДРЕС ЕСЛИ ИНДЕКС НЕ ИЗВЕСТЕН" id="address" formControlName="address" ></textarea>
 		<div class="validation_error" *ngIf="userForm.get('address').invalid && userForm.get('address').touched">
 			Не указано или не верно указано значение почтового индекса (6 цифр)
 		</div>
