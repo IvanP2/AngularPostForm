@@ -1,0 +1,26 @@
+[
+    {
+       "name": "Посылка стандарт",
+       "deliveryTypeId": 0,
+       "minWeight": 0,
+       "maxWeight": 10000
+    },
+    {
+       "name": "Посылка нестандарт",
+       "deliveryTypeId": 0,
+       "minWeight": 10000,
+       "maxWeight": 20000
+    },
+    {
+        "name": "EMС обыкновенное",
+        "deliveryTypeId": 1,
+        "minWeight": 0,
+        "maxWeight": 5000
+    },
+    {
+        "name": "EMС оптимальное",
+        "deliveryTypeId": 1,
+        "minWeight": 0,
+        "maxWeight": 30000
+    }
+   ]

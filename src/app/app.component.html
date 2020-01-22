@@ -1,0 +1,68 @@
+<form class="user-form" [formGroup]="userForm" (submit)="onSubmit()">
+
+	<div class="form-group">
+		<div class="form-label">
+			<label for="name">ШПИ</label>
+		</div>
+		<input type="text" class="number_field" id="trackingNumber" formControlName="trackingNumber" (change)="onTrackingNumberChange()" />
+		<div class="validation_error" *ngIf="userForm.get('trackingNumber').invalid && userForm.get('trackingNumber').touched">
+			ШПИ не соответствует внутреннему или международному формату
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="form-label">
+			<label for="name">Вес в граммах</label>
+		</div>
+		<input type="text" class="weight_field" id="weight" formControlName="weight" (change)="onWeightChange()" />
+		<div class="validation_error" *ngIf="userForm.get('weight').invalid && userForm.get('weight').touched">
+			Вес должен быть целым числом (в граммах)
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="form-label">
+			<label for="departureType">Отправление</label>
+		</div>
+		<select  [(ngModel)]="selectedDeliveryType" id="departureType" formControlName="departureType">
+			<option disabled value="null">Посылки</option>
+			<option *ngFor="let type of deliveryType">{{type.name}}</option>
+    	</select>
+	</div>
+
+	<div class="form-group" *ngIf="isTrackingNumberValid == false  || isInternalTrackingNumber">
+		<div class="form-label">
+			<label for="departureForm">Тип</label>
+		</div>
+		<select [(ngModel)]="selectedDeliveryForm" id="departureForm" formControlName="departureForm">
+			<option disabled value="null">Посылка стандарт</option>
+			<option *ngFor="let form of deliveryForm">{{form.name}}</option>
+		</select>
+	</div>
+
+	<div class="form-group">
+		<div class="form-label">
+			<label for="address">Индекс получателя</label>
+		</div>
+		<textarea rows="3" cols="70" placeholder="ВВЕДИТЕ ИНДЕКС                                                   АДРЕС ЕСЛИ ИНДЕКС НЕ ИЗВЕСТЕН" id="address" formControlName="address" ></textarea>
+		<div class="validation_error" *ngIf="userForm.get('address').invalid && userForm.get('address').touched">
+			Не указано или не верно указано значение почтового индекса (6 цифр)
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="form-label">
+			<label for="recipient">Получатель</label>
+		</div>
+		<input type="text" class="recipient_field" id="recipient"  placeholder="ФАМИЛИЯ ПОЛУЧАТЕЛЯ ИЛИ ОРГАНИЗАЦИЯ" formControlName="recipient" />
+		<input type="checkbox" id="isOrganization" />
+		<label for="isOrganization">Организация</label>
+		<div class="validation_error" *ngIf="userForm.get('recipient').invalid && userForm.get('recipient').touched">
+			Не указан получатель
+		</div>
+	</div>
+	
+	<div class="submit_button" *ngIf="isTrackingNumberValid && isWeightValid && userForm.get('address').valid && userForm.get('recipient').valid && selectedDeliveryType!=0 && (!isInternalTrackingNumber || selectedDeliveryForms!=0)">
+		<button type="submit">Сохранить</button>
+	</div>
+</form>

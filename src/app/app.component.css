@@ -1,0 +1,70 @@
+  .form-group{
+    /*display:  flex;
+    flex-direction: column;*/
+    margin-bottom: 10px;
+  }
+  
+  .form-label{
+    width:200px;
+    float:left;
+  }
+
+  .user-form{
+    padding: 10px 20px;
+    border: 2px blue solid;
+    width: 715px;
+    height: 250px;
+  }
+
+  .number_field{
+    width: 380px;
+  }
+
+  .weight_field{
+    width: 70px;
+  }
+
+  .recipient_field{
+    width: 350px;
+  }
+
+  label{
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+
+  select{
+    width: 200px;
+  }
+  
+  select.ng-invalid.ng-touched,
+  input.ng-invalid.ng-touched{
+    border: 2px solid red;
+  }
+  
+  input.ng-pending{
+    border: 2px solid yellow;
+  }
+  
+  input:focus {
+   outline: none;
+  }
+
+  .submit_button {
+    float: right;
+    padding-right: 100px;
+  }
+  
+  .error{
+    color:red;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 5px;
+  }
+
+  .validation_error{
+    color:red;
+    font-size: 14px;
+    margin-left: 200px;
+    margin-bottom: 5px;
+  }

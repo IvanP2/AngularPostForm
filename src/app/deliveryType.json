@@ -1,0 +1,26 @@
+[
+    {
+       "name": "Посылки",
+       "trackerNumberTypeId": 0,
+       "minWeight": 0,
+       "maxWeight": 20000
+    },
+    {
+        "name": "EMS",
+        "trackerNumberTypeId": 0,
+        "minWeight": 0,
+        "maxWeight": 30000
+    },
+    {
+        "name": "Международные посылки",
+        "trackerNumberTypeId": 1,
+        "minWeight": 0,
+        "maxWeight": 10000
+    },
+    {
+        "name": "Международные ЕМС",
+        "trackerNumberTypeId": 1,
+        "minWeight": 0,
+        "maxWeight": 20000
+    }
+   ]
